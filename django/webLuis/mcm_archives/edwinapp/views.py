@@ -10,3 +10,6 @@ def saludo (request, nombre):
     return render(request, "edwinapp/saludo.html", {
         "nombre":nombre.capitalize()
         })
+
+def index1 (request):
+    return render(request, "edwinapp/index.html")
