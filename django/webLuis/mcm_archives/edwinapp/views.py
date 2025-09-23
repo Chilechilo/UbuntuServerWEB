@@ -7,4 +7,6 @@ def index(request):
     return HttpResponse("Hello, world!")
 
 def saludo (request, nombre):
-    return render(request, "edwinapp/saludo.html", {"nombre":nombre.capitalize()})
+    return render(request, "edwinapp/saludo.html", {
+        "nombre":nombre.capitalize()
+        })
