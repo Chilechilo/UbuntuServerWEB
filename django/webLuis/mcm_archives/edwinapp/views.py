@@ -14,9 +14,6 @@ def saludo (request, nombre):
 def index1 (request):
     return render(request, "edwinapp/index.html")
 
-def index2 (request):
-    return render(request, "edwinapp/index2.html")
-
 def aboutp (request):
     return render(request, "edwinapp/about.html")
 
