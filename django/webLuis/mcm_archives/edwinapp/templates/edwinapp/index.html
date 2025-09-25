@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html long="en">
-    <head>
-        <title>Hola!</title>
-    </head>
+{% extends "edwinapp/base.html" %}
+{% block content %}
     <h1>My name is Edwin</h1>
-<body>
     <a href="{% url 'about' %}">Acerca de</a> |
     <a href="{% url 'sumar' %}">Ir a calculadora</a>
-</body>
-</html>
+{% endblock %} 
