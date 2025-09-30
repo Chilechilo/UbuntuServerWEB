@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Task
+from django.urls import reverse
 
 # Create your views here.
 
@@ -35,4 +36,25 @@ def sumar(request):
         "b": b or "",
         "resultado": resultado,
         "error": error,
+    })
+
+tasks = ["foo","bar","baz"]
+
+def tasks_index(request):
+    return render (request, "edwinapp/tasks_index.html", {
+        "tasks": tasks
+    })
+
+def tasks_add (request):
+    if request.method == "POST":
+        task = request.POST.get ("task")
+        if task:
+            task.append(task)
+        return HttpResponseRedirect(reverse("task_index"))
+    return render(request,"edwinapp/task_add,html")
+
+def tasks_admin_list(request):
+    task = Task.objects.all().order_by("_created_at")
+    return render(request, "edwinapp/task_admin_list.html", {
+        "tasks":task
     })

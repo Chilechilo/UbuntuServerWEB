@@ -1,0 +1,12 @@
+{% extends "edwinapp/base.html" %}
+{% block content %}
+<h1 class="mb-4">Add Tasks</h1>
+<form action="{% url 'tasks_add' %}" methed="post" class="mb-3">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input type="text" name="task" placeholder="New task" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success">Add</button>
+</form>
+<a href="{% url 'tasks_index' %}" class="btn  btn-secondary">View tasks</a>
+{% endblock %}

@@ -1,0 +1,12 @@
+<h1>My tasks</h1>
+<ul class="list-group">
+    {% for task in tasks %}
+    <li class="list-group-items">{{task}}</li>
+    {% empty %}
+    <li class="list-group-item text-muted">
+        No tasks yet
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'tasks_add' %}" class="btn btn-primary mt-3">Add a New Task</a>

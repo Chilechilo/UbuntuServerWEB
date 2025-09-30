@@ -1,0 +1,15 @@
+{% extends %}
+{% block content %}
+
+<h1>Tasks from Admin</h1>
+<ul class="list-group">
+    {% for task in tasks %}
+    <li class="list-group-item">
+        {{task.title}}<span class="text-muted">({{task.created_at}})</span>
+    </li>
+    {% empty %}
+    <li class="list-group-item text-muted">No tasks created in admin</li>
+    {% endfor %}
+</ul>
+<a href="/admin/" class="btn btn-secondary mt-3">Go to Admin</a>
+{% endblock %}
