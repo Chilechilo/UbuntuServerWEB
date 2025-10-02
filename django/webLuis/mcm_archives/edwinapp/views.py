@@ -58,3 +58,6 @@ def tasks_admin_list(request):
     return render(request, "edwinapp/task_admin_list.html", {
         "tasks":task
     })
+
+def index2(request):
+    return HttpResponse("Bienvenido al menú")
