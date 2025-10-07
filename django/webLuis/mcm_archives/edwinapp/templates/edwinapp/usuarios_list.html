@@ -1,0 +1,35 @@
+{% extends "edwinapp/base.html" %}
+{% block content %}
+<style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { color: #2E7D32; }
+    table { border-collapse: collapse; width: 60%; }
+    th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
+    th { background-color: #eee; }
+</style>
+
+<h1>Usuarios registrados</h1>
+
+{% if usuarios %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u in usuarios %}
+            <tr>
+                <td>{{ u.id }}</td>
+                <td>{{ u.nombre }}</td>
+                <td>{{ u.edad }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No hay usuarios registrados todavía.</p>
+{% endif %}
+{% endblock %}

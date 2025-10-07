@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Task
+from .models import Task, Usuario
 from django.urls import reverse
 
 # Create your views here.
@@ -61,3 +61,9 @@ def tasks_admin_list(request):
 
 def index2(request):
     return render(request, "edwinapp/index2.html")
+
+def usuarios_list(request):
+    usuarios = Usuario.objects.all()
+    return render(request, "edwinapp/usuarios_list.html", {
+        "usuarios": usuarios
+    })
